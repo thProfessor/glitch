@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Toni & Guy</title>
+    <!-- google fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:500,600,700,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- css -->
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <!-- OVERLAY
+    =============================== -->
+      <div class="overlay first"></div>
+      <div class="overlay second"></div>
+      <div class="overlay third"></div>
+
+      <!-- NAVBAR
+    =============================== -->
+      <nav
+        class="navbar navbar-light bg-light"
+        style="background-color: #e3f2fd;"
+      >
+        <a class="navbar-brand">Music</a>
+        <form class="form-inline">
+          <input
+            class="form-control mr-sm-2"
+            type="search"
+            placeholder="Search your playlist"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+            Search your playlist
+          </button>
+        </form>
+      </nav>
+
+      <!-- SOCIAL MEDIA
+    =============================== -->
+      <div class="container-fluid">
+        <div class="media">
+          <ul>
+            <li>facebook</li>
+            <li>instagram</li>
+            <li>twitter</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- TEXT
+    =============================== -->
+      <div class="container">
+        <div class="text">
+          <h1>
+            <span class="hidetext">Utkarsh</span>
+          </h1>
+          <h2>music</h2>
+          <h3>
+            <span class="hidetext">Recommendations</span>
+          </h3>
+          <p>
+            <span class="hidetext">
+              Just for fun. Not so responsive!
+            </span>
+          </p>
+        </div>
+      </div>
+
+      <!-- SPONSOR
+    =============================== -->
+      <div class="sponsor">
+        <img src="./images/sponsor-logo.png" alt="" />
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- DISTORTION
+    =============================== -->
+    <div class="container-fluid">
+      <div class="distortion"></div>
+    </div>
+
+    <!-- icons -->
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <!-- gsap -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"
+      integrity="sha256-lPE3wjN2a7ABWHbGz7+MKBJaykyzqCbU96BJWjio86U="
+      crossorigin="anonymous"
+    ></script>
+    <!-- three js -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/three.js/108/three.min.js"
+      integrity="sha256-3mBEX8I0uMLF7+AUjJeTCelosuorzYpqwBMBPDTyQqY="
+      crossorigin="anonymous"
+    ></script>
+    <!-- hover-effect js -->
+    <script src="./hover-effect.umd.js"></script>
+
+    <script>
+      new hoverEffect({
+        parent: document.querySelector(".distortion"),
+        intensity: 0.2,
+        image1: "./images/01.png",
+        image2: "./images/02.png",
+        displacementImage: "./images/diss.png",
+        imagesRatio: 380 / 300,
+      });
+
+      // NAVBAR
+      TweenMax.staggerFrom(
+        ".navbar div",
+        1.5,
+        {
+          delay: 1.5,
+          opacity: 0,
+          y: "20",
+          ease: Expo.easeInOut,
+        },
+        0.08
+      );
+
+      // MEDIA
+      TweenMax.staggerFrom(
+        ".media ul li",
+        1.5,
+        {
+          delay: 1.5,
+          opacity: 0,
+          x: "-20",
+          ease: Expo.easeInOut,
+        },
+        0.08
+      );
+
+      // TEXT
+      TweenMax.from(".text h1 .hidetext", 1.5, {
+        delay: 1,
+        y: "100%",
+        ease: Expo.easeInOut,
+      });
+
+      TweenMax.from(".text h3 .hidetext", 1.5, {
+        delay: 1.2,
+        y: "100%",
+        ease: Expo.easeInOut,
+      });
+
+      TweenMax.from(".text p .hidetext", 1.5, {
+        delay: 1.3,
+        y: "100%",
+        ease: Expo.easeInOut,
+      });
+
+      TweenMax.from(".text h2", 1.5, {
+        delay: 1.5,
+        opacity: 0,
+        x: "-10000",
+        ease: Expo.easeInOut,
+      });
+
+      // SPONSOR
+      TweenMax.from(".sponsor img", 1.5, {
+        delay: 1.5,
+        opacity: 0,
+        y: "20",
+        ease: Expo.easeInOut,
+      });
+
+      TweenMax.from(".sponsor p", 1.5, {
+        delay: 1.6,
+        opacity: 0,
+        y: "20",
+        ease: Expo.easeInOut,
+      });
+
+      // DISTORTION
+      TweenMax.from(".distortion", 1.5, {
+        delay: 2,
+        opacity: 0,
+        y: "20",
+        ease: Expo.easeInOut,
+      });
+
+      // OVERLAY
+      TweenMax.to(".first", 1.5, {
+        delay: 0.5,
+        top: "-100%",
+        ease: Expo.easeInOut,
+      });
+
+      TweenMax.to(".second", 1.5, {
+        delay: 0.7,
+        top: "-100%",
+        ease: Expo.easeInOut,
+      });
+
+      TweenMax.to(".third", 1.5, {
+        delay: 0.9,
+        top: "-100%",
+        ease: Expo.easeInOut,
+      });
+    </script>
+  </body>
+</html>
